@@ -15,17 +15,17 @@ plt.plot(days, money_spent)
 plt.show()
 
 compare two datasets with the same scale and axis categories.
-# Days of the week:
+#Days of the week:
 days = [0, 1, 2, 3, 4, 5, 6]
-# Your Money:
+#Your Money:
 money_spent = [10, 12, 12, 10, 14, 22, 24]
-# Your Friend's Money:
+#Your Friend's Money:
 money_spent_2 = [11, 14, 15, 15, 22, 21, 12]
-# Plot your money:
+#Plot your money:
 plt.plot(days, money_spent)
-# Plot your friend's money:
+#Plot your friend's money:
 plt.plot(days, money_spent_2)
-# Display the result:
+#Display the result:
 plt.show()
 
 time = [0, 1, 2, 3, 4]
