@@ -1,0 +1,86 @@
+Bar Chart
+Plt.bar()
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+sales =  [91, 76, 56, 66, 52, 27]
+
+ax = plt.subplot()
+plt.bar(range(len(drinks)), sales)
+ax.set_xticks(range(len(drinks)))
+ax.set_xticklabels(drinks)
+plt.show()
+
+Side by Side Bar Chart
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+sales1 =  [91, 76, 56, 66, 52, 27]
+sales2 = [65, 82, 36, 68, 38, 40]
+
+#Paste the x_values code here
+n = 1  # This is our second dataset (out of 2)
+t = 2 # Number of datasets
+d = 6 # Number of sets of bars
+w = 0.8 # Width of each bar
+store1_x = [t*element + w*n for element  in range(d)]
+plt.bar(store1_x, sales1)
+
+n = 2  # This is our second dataset (out of 2)
+t = 2 # Number of datasets
+d = 6 # Number of sets of bars
+w = 0.8 # Width of each bar
+store2_x = [t*element + w*n for element
+             in range(d)]
+plt.bar(store2_x, sales2)
+
+Stack Bar Chart
+If we want to compare two sets of data while preserving knowledge of the total between them, we can also stack the bars instead of putting them side by side.
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+sales1 =  [91, 76, 56, 66, 52, 27]
+sales2 = [65, 82, 36, 68, 38, 40]
+
+plt.bar(range(len(drinks)), sales1)
+plt.bar(range(len(drinks)), sales2, bottom= sales1)
+plt.legend(['Location 1', 'Location 2'])
+plt.show()
+
+Error Chart
+drinks = ["cappuccino", "latte", "chai", "americano", "mocha", "espresso"]
+ounces_of_milk = [6, 9, 4, 0, 9, 0]
+error = [i*0.1 for i in ounces_of_milk]
+
+# Plot the bar graph here
+yerr= error
+plt.bar(range(len(drinks)), ounces_of_milk, yerr=yerr, capsize=5)
+
+plt.show()
+
+Error Line
+months = range(12)
+month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+revenue = [16000, 14000, 17500, 19500, 21500, 21500, 22000, 23000, 20000, 19500, 18000, 16500]
+
+#your work here
+plt.plot(months, revenue)
+ax= plt.subplot()
+ax.set_xticks(months)
+ax.set_xticklabels(month_names)
+y_lower = [0.9*i for i in revenue]
+y_upper = [1.1*i for i in revenue]
+plt.fill_between(months, y_lower, y_upper, alpha=0.2)
+
+plt.show()
+
+Pie Chart
+If we want to display elements of a data set as proportions of a whole, we can use a pie chart.
+
+payment_method_names = ["Card Swipe", "Cash", "Apple Pay", "Other"]
+payment_method_freqs = [270, 77, 32, 11]
+
+plt.pie(payment_method_freqs,labels=payment_method_names, autopct = '%0.1f%%')
+plt.axis('equal')
+•	'%0.2f' — 2 decimal places, like 4.08
+•	'%0.2f%%' — 2 decimal places, but with a percent sign at the end, like 4.08%. You need two consecutive percent signs because the first one acts as an escape character, so that the second one gets displayed on the chart.
+•	'%d%%' — rounded to the nearest int and with a percent sign at the end, like 4%.
+Histogram
+ plt.hist(dataset, range=(66,69), bins=40, color = ‘green’)
+If we want to compare two different distributions, we can put multiple histograms on the same plot.
+Plt.hist(data1, bins=20, alpha=0.4) 
+Plt.hist(data2, bins=20, alpha = 0.4)  may add histtype=’step’  and normed=True in the argument
